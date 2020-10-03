@@ -33,33 +33,33 @@
     padding-left: #{$i}px;
   }
 
-  .md-#{$i} {
+  .mg-#{$i} {
     margin: #{$i}px;
   }
 
-  .mdx-#{$i} {
+  .mgx-#{$i} {
     margin-left: #{$i}px;
     margin-right: #{$i}px;
   }
 
-  .mdy-#{$i} {
+  .mgy-#{$i} {
     margin-top: #{$i}px;
     margin-bottom: #{$i}px;
   }
 
-  .mdt-#{$i} {
+  .mgt-#{$i} {
     margin-top: #{$i}px;
   }
 
-  .mdr-#{$i} {
+  .mgr-#{$i} {
     margin-right: #{$i}px;
   }
 
-  .mdb-#{$i} {
+  .mgb-#{$i} {
     margin-bottom: #{$i}px;
   }
 
-  .mdl-#{$i} {
+  .mgl-#{$i} {
     margin-left: #{$i}px;
   }  
 }
