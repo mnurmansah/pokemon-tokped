@@ -2,21 +2,10 @@
 
 .jumbotron {
   &.header-jumbotron {
-    padding: 16px;
     background-color: $white;
-    margin-bottom: 24px;
   }
-}
-
-.header-top-section {
-  padding-bottom: 24px;
 }
 
 .total-balance {
   line-height: 33px;
-  color: $grey;
-}
-
-.account-card-container {
-  padding: 0 16px;
 }
