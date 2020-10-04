@@ -43,9 +43,11 @@ export default function Login() {
             type="password"
           />
         </FormGroup>
-        <Button block disabled={!validateForm()} type="submit">
+        <div >
+        <Button className="button-color" block disabled={!validateForm()} type="submit">
           Masuk
         </Button>
+        </div>
       </form>
     </div>
     <p className="text-center mgt-8 fs-13">Lupa Kata Sandi?</p>
