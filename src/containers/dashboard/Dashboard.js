@@ -2,6 +2,7 @@ import React from 'react';
 import { Accordion, Col, Jumbotron, Row } from 'react-bootstrap';
 import AccountCard from './account_card/AccountCard';
 import QuickHistory from './quick_history/QuickHistory';
+import NavigationBar from './navigation_bar/NavigationBar';
 import './Dashboard.scss'
 
 class Dashboard extends React.Component {
@@ -67,7 +68,7 @@ class Dashboard extends React.Component {
     const { accounts, history } = this.state;
 
     return (
-      <>
+      <div className="dashboard-container">
         <Jumbotron className="mb-0 pd-16 header-jumbotron">
           <div className="d-flex justify-content-between text-center pdb-24">
             <img src="/images/icons/sort.svg" alt="sort-icon"></img>
@@ -118,7 +119,8 @@ class Dashboard extends React.Component {
             </Col>
           </Row>
         </div>
-      </>
+        <NavigationBar />
+      </div>
     )
   }
 }
