@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import './App.scss';
-import Dashboard from '../dashboard/Dashboard';
+import Login from '../login/Login';
 
 function App() {
   return (
@@ -11,7 +11,7 @@ function App() {
         <Col>
           <Router>
             <Switch>
-              <Route path="/" exact><Dashboard /></Route>
+              <Route path="/" exact><Login /></Route>
             </Switch>
           </Router>
         </Col>
