@@ -1,5 +1,9 @@
 @import "../../styles/variables.scss";
 
+.dashboard-container {
+  padding-bottom: 64px;
+}
+
 .jumbotron {
   &.header-jumbotron {
     background-color: $white;

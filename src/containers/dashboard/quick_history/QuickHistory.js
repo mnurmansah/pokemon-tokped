@@ -4,8 +4,6 @@ import { Link } from 'react-router-dom';
 import './QuickHistory.scss';
 
 const QuickHistory = ({ history: { name, day, time, type, amount }, index }) => {
-  console.log(index);
-
   return (
     <Card className="mb-2 quick-history-card">
       <Accordion.Toggle as={Card.Header} eventKey={index} className="py-1 px-2">
