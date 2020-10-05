@@ -4,10 +4,10 @@ import './AccountCard.scss';
 
 const AccountCard = ({ account: { name, balance, background } }) => (
   <Card 
-    className="account-card" 
+    className="mgb-8 account-card" 
     style={{ background: background }}
   >
-    <Card.Body>
+    <Card.Body className="pd-8">
       <Card.Title className="font-weight-normal fs-12">
         { name }
       </Card.Title>

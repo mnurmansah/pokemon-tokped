@@ -51,7 +51,7 @@ export default function Login() {
       </form>
     </div>
     <p className="text-center mgt-8 fs-13">Lupa Kata Sandi?</p>
-    <p className="text-center fs-13">Tidak memiliki akun? <Link to="/Dashboard" > Daftar </Link></p>
+    <p className="text-center fs-13">Tidak memiliki akun? <Link to="/register" > Daftar </Link></p>
     </>
   );
 }

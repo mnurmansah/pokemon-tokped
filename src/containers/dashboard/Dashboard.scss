@@ -1,22 +1,15 @@
 @import "../../styles/variables.scss";
 
-.jumbotron {
-  &.header-jumbotron {
-    padding: 16px;
-    background-color: $white;
-    margin-bottom: 24px;
-  }
+.dashboard-container {
+  padding-bottom: 64px;
 }
 
-.header-top-section {
-  padding-bottom: 24px;
+.jumbotron {
+  &.header-jumbotron {
+    background-color: $white;
+  }
 }
 
 .total-balance {
   line-height: 33px;
-  color: $grey;
-}
-
-.account-card-container {
-  padding: 0 16px;
 }

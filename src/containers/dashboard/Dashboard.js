@@ -1,6 +1,8 @@
 import React from 'react';
-import { Col, Jumbotron, Row } from 'react-bootstrap';
+import { Accordion, Col, Jumbotron, Row } from 'react-bootstrap';
 import AccountCard from './account_card/AccountCard';
+import QuickHistory from './quick_history/QuickHistory';
+import NavigationBar from './navigation_bar/NavigationBar';
 import './Dashboard.scss'
 
 class Dashboard extends React.Component {
@@ -28,29 +30,59 @@ class Dashboard extends React.Component {
           balance: 100000,
           background: 'linear-gradient(100.41deg, #56CCF2 0%, #2E8FAE 100%)'
         }
+      ],
+      history: [
+        {
+          name: 'Gaji',
+          day: 'Today',
+          time: '15.00',
+          type: 'income',
+          amount: 5000000
+        },
+        {
+          name: 'Makan Odading Mang Oleh',
+          day: 'Today',
+          time: '15.00',
+          type: 'expense',
+          amount: 20000
+        },
+        {
+          name: 'Transfer Bank ke Opo',
+          day: 'Today',
+          time: '15.00',
+          type: 'transfer',
+          amount: 50000
+        },
+        {
+          name: 'Gaji',
+          day: 'Today',
+          time: '15.00',
+          type: 'income',
+          amount: 5000000
+        }
       ]
     }
   }
 
   render() {
-    const { accounts } = this.state;
+    const { accounts, history } = this.state;
 
     return (
-      <>
-        <Jumbotron className="header-jumbotron">
-          <div className="d-flex justify-content-between text-center header-top-section">
-            <img src="/images/icons/sort_24px.svg" alt="sort-icon"></img>
+      <div className="dashboard-container">
+        <Jumbotron className="mb-0 pd-16 header-jumbotron">
+          <div className="d-flex justify-content-between text-center pdb-24">
+            <img src="/images/icons/sort.svg" alt="sort-icon"></img>
             <p className="mb-0 fs-14">Yudhistira Putra Nugraha</p>
-            <img src="/images/icons/mood_24px.svg" alt="mood-icon"></img>
+            <img src="/images/icons/mood.svg" alt="mood-icon"></img>
           </div>
           <p className="mb-1 fs-12">Total Saldo :</p>
           <p className="mb-0 font-weight-bold total-balance fs-28">Rp 100.000.000</p>
         </Jumbotron>  
-        <div className="account-card-container">
+        <div className="pdx-16">
           <Row>
             <Col className="d-flex justify-content-between my-2">
               <p className="mb-0 fs-12">Daftar Akun</p>
-              <img src="/images/icons/add_24px.svg" alt="mood-icon"></img>
+              <img src="/images/icons/add.svg" alt="add-icon"></img>
             </Col>
           </Row>
           <Row>
@@ -64,8 +96,31 @@ class Dashboard extends React.Component {
               ))
             }
           </Row>
+          <Row>
+            <Col>
+              <div className="d-flex justify-content-between fs-12 pdt-20">
+                <p className="mb-0">Riwayat Saldo</p>
+                <div className="d-flex justify-content-center font-weight-bold">
+                  <p className="mb-0 mr-2 load-more">Muat Lebih</p>
+                  <img src="/images/icons/chevron_right.svg" alt="chevron-right-icon"></img>
+                </div>
+              </div>
+            </Col>
+          </Row>
+          <Row>
+            <Col>
+              <Accordion className="pdt-16">
+                {
+                  history.map((data, index) => (
+                    <QuickHistory history={data} index={index + 1} key={index} />
+                  ))
+                }
+              </Accordion>
+            </Col>
+          </Row>
         </div>
-      </>
+        <NavigationBar />
+      </div>
     )
   }
 }
