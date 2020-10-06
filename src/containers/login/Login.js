@@ -32,6 +32,7 @@ export default function Login() {
             autoFocus
             type="email"
             value={email}
+            placeholder="Email"
             onChange={e => setEmail(e.target.value)}
           />
         </FormGroup>
@@ -39,6 +40,7 @@ export default function Login() {
           <FormLabel>Kata Sandi</FormLabel>
           <FormControl
             value={password}
+            placeholder="Password"
             onChange={e => setPassword(e.target.value)}
             type="password"
           />
