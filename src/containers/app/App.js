@@ -1,6 +1,7 @@
 import React from 'react';
 import { Col, Container, Row } from 'react-bootstrap';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
+import Login from '../login/Login';
 import Dashboard from '../dashboard/Dashboard';
 
 function App() {
@@ -10,8 +11,8 @@ function App() {
         <Col>
           <Router>
             <Switch>
-              {/* Add route for new page here */}
-              <Route path="/" exact><Dashboard /></Route>
+              <Route path="/" exact><Dashboard/></Route>
+              <Route path="/login" exact><Login/></Route>
             </Switch>
           </Router>
         </Col>
