@@ -102,7 +102,7 @@ class Dashboard extends React.Component {
                 <p className="mb-0">Riwayat Saldo</p>
                 <div className="d-flex justify-content-center font-weight-bold">
                   <p className="mb-0 mr-2 load-more">Muat Lebih</p>
-                  <img src="/images/icons/chevron_right.svg" alt="chevron-right-icon"></img>
+                  <img src="/images/icons/chevron-right.svg" alt="chevron-right-icon"></img>
                 </div>
               </div>
             </Col>
