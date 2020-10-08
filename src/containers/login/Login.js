@@ -1,11 +1,13 @@
-import React, { useState } from "react";
+import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Button, FormGroup, FormControl, FormLabel } from "react-bootstrap";
-import "./Login.scss";
+import {
+  Button, FormGroup, FormControl, FormLabel,
+} from 'react-bootstrap';
+import './Login.scss';
 
 export default function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
 
   function validateForm() {
     return email.length > 0 && password.length > 0;
@@ -24,7 +26,7 @@ export default function Login() {
     <br></br><br></br>
     <div className="Login">
       <form onSubmit={handleSubmit}>
-        <FormGroup controlId="email" bsSize="large">
+        <FormGroup controlId="email">
           <FormLabel><img src="/images/icons/text_selamat_datang_24px.svg" alt="sort-icon"></img></FormLabel>
           <br></br>
           <FormLabel>Email</FormLabel>
@@ -36,7 +38,7 @@ export default function Login() {
             onChange={e => setEmail(e.target.value)}
           />
         </FormGroup>
-        <FormGroup controlId="password" bsSize="large">
+        <FormGroup controlId="password">
           <FormLabel>Kata Sandi</FormLabel>
           <FormControl
             value={password}

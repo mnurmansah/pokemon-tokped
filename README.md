@@ -1,68 +1,68 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# proj-dompet-web v0.1
+Project Web Pages for money management.
 
-## Available Scripts
+## Credit
 
-In the project directory, you can run:
+This non commercial/personal use project is inspired by the https://budgetbakers.com/, and https://www.realbyteapps.com/.
+Love how the apps work and wanna try to create the similar apps for learning purposes. 
 
-### `npm start`
+This project uses component based folder structure, therefore every component and it's complementary files such as styles, 
+will be placed on the same folder.
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+# How to contribute
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+- Fork the repository
+- Create a new branch from `master` branch, i.e.
+    > n.b. please follow this naming format:
+    >
+    > feature/<your_feature_name> for new feature implementation
+    >
+    > bugfix/<your_bugfix_name> for creating a bugfix
+    >   
+    
+    ```
+    git checkout -b feature/add_new_support_pages
+    ```
+- Use commit message that represent your changes, don't put random commit message. i.e.
 
-### `npm test`
+    ```
+    adding new support pages -> Allowed
+    asdasdasd -> Not allowed
+    ```
+- After you're done with your development, please create the PR to `master` branch
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+# FAQ
 
-### `npm run build`
+Q: Is it paid apps?
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+A: It's completely free.
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+Q: This project uses [airbnb style guide](https://github.com/airbnb/javascript). 
+   How to use it ?
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+A: 
 
-### `npm run eject`
+   Install eslint extension on your code editor and configure it to do actions on save.
+   Example, if you use [vscode](https://code.visualstudio.com/) you can add : 
+   ```
+   "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+   }
+   ```
+   
+Q: This project uses prettier formatter other than javascript files. How to use it ?
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+A: 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+   Install prettier extension on your code editor and configure it to 
+   do format on save on specific format, such as .scss or .html.
+   Example, if you use [vscode](https://code.visualstudio.com/) you can add :
+   ```
+   "[scss]": {
+    "editor.formatOnSave": true
+   },
+   "[html]": {
+    "editor.formatOnSave": true
+   }
+   ```
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `npm run build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify

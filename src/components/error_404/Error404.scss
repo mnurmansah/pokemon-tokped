@@ -1,0 +1,23 @@
+@import "../../styles/variables.scss";
+
+.error-404 {
+  height: 100vh;
+
+  @media screen and (max-width: 575.98px) {
+    img {
+      width: 100%;
+    }
+  }
+}
+
+.btn {
+  &.custom-button {
+    &.not-found {
+      background-color: $green;
+
+      @media screen and (max-width: 575.98px) {
+        min-width: 100%;
+      }
+    }
+  }
+}
