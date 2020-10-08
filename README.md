@@ -19,10 +19,12 @@ will be placed on the same folder.
     >
     > bugfix/<your_bugfix_name> for creating a bugfix
     >   
+    
     ```
     git checkout -b feature/add_new_support_pages
     ```
 - Use commit message that represent your changes, don't put random commit message. i.e.
+
     ```
     adding new support pages -> Allowed
     asdasdasd -> Not allowed
