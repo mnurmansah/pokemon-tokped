@@ -9,8 +9,6 @@ Love how the apps work and wanna try to create the similar apps for learning pur
 This project uses component based folder structure, therefore every component and it's complementary files such as styles, 
 will be placed on the same folder.
 
-# App Feature
-
 # How to contribute
 
 - Fork the repository
@@ -36,4 +34,25 @@ will be placed on the same folder.
 ```
 Q: Is it paid apps?
 A: It's completely free.
+Q: This project uses [airbnb style guide](https://github.com/airbnb/javascript). 
+   How to use it ?
+A: Install eslint extension on your code editor and configure it to do actions on save.
+   Example, if you use [vscode](https://code.visualstudio.com/) you can add : 
+   
+   "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+   }
+   
+Q: This project uses [prettier formatter](https://github.com/airbnb/javascript) 
+   other than javascript files. How to use it ?
+A: Install prettier extension on your code editor and configure it to 
+   do format on save on specific format, such as .scss or .html.
+   Example, if you use [vscode](https://code.visualstudio.com/) you can add :
+   
+   "[scss]": {
+    "editor.formatOnSave": true
+   },
+   "[html]": {
+    "editor.formatOnSave": true
+   }
 ```
