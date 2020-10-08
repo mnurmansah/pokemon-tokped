@@ -50,12 +50,12 @@ A:
    }
    ```
    
-Q: This project uses prettier formatter other than javascript files. How to use it ?
+Q: This project uses prettier formatter to format files other than javascript files. How to use it ?
 
 A: 
 
    Install prettier extension on your code editor and configure it to 
-   do format on save on specific format, such as .scss or .html.
+   do format on save on specific format, such as **.scss** or **.html**.
    Example, if you use [vscode](https://code.visualstudio.com/) you can add :
    ```
    "[scss]": {
