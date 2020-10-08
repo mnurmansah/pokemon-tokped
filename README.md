@@ -3,7 +3,7 @@ Project Web Pages for money management.
 
 ## Credit
 
-This non commercial/personal use project is inspired by the https://budgetbakers.com/, and https://www.realbyteapps.com/ 
+This non commercial/personal use project is inspired by the https://budgetbakers.com/, and https://www.realbyteapps.com/.
 Love how the apps work and wanna try to create the similar apps for learning purposes. 
 
 This project uses component based folder structure, therefore every component and it's complementary files such as styles, 
