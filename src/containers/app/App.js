@@ -15,9 +15,9 @@ function App() {
         <Col>
           <Router history={history}>
             <Switch>
-              <Route path="/" exact component={Dashboard}></Route>
-              <Route path="/login" exact component={Login}></Route>
-              <Route path="*" component={Error404}></Route>
+              <Route path="/" exact component={Dashboard} />
+              <Route path="/login" exact component={Login} />
+              <Route path="*" component={Error404} />
             </Switch>
           </Router>
         </Col>
