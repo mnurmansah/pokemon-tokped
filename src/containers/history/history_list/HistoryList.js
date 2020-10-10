@@ -22,14 +22,19 @@ const HistoryList = ({
           data.map((historyData, index) => (
             <Accordion.Toggle as={Card.Header} className="mb-0 py-1 px-2" key={index}>
               <Row>
-                <Col xs={6}>
-                  <p className="mb-0 text-truncate fs-12">{ historyData.name }</p>
-                  <p className="mb-0 fs-8">
-                    { historyData.day }
-                    ,
-                    {' '}
-                    { historyData.time }
-                  </p>
+                <Col xs={6} className="d-flex justify-content-start align-items-center">
+                  <div className="d-flex align-items-center justify-content-center mr-2 box">
+                    <img src="/images/icons/food-drinks.svg" alt="food-drinks" />
+                  </div>
+                  <div className="text-truncate">
+                    <p className="text-truncate mb-0 fs-12">{ historyData.name }</p>
+                    <p className="mb-0 fs-8">
+                      { historyData.day }
+                      ,
+                      {' '}
+                      { historyData.time }
+                    </p>
+                  </div>
                 </Col>
                 <Col xs={6} className="d-flex justify-content-end align-items-center">
                   <img src={`/images/icons/${historyData.type}.svg`} alt={`${historyData.type}-icon`} />
