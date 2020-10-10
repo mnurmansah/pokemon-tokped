@@ -1,6 +1,5 @@
 import React from 'react';
 import {
-  Accordion,
   Button, Col, Row,
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
@@ -15,6 +14,7 @@ class History extends React.Component {
       history: [
         {
           date: 'Hari ini',
+          totalAmount: 5000000,
           data: [
             {
               name: 'Gaji',
@@ -47,7 +47,8 @@ class History extends React.Component {
           ],
         },
         {
-          date: '04 - Oktober - 2020',
+          date: '10 Oktober 2020',
+          totalAmount: 5000000,
           data: [
             {
               name: 'Gaji',
@@ -80,7 +81,8 @@ class History extends React.Component {
           ],
         },
         {
-          date: '03 - Oktober - 2020',
+          date: '09 Oktober 2020',
+          totalAmount: 5000000,
           data: [
             {
               name: 'Gaji',
@@ -130,7 +132,7 @@ class History extends React.Component {
                 <p className="font-weight-bold fs-14 mb-0 mgl-20">Riwayat</p>
               </div>
             </Link>
-            <div className="d-flex justify-content-center align-items-center mgt-24 history-button-group">
+            <div className="d-flex justify-content-center align-items-center mgy-24 history-button-group">
               <Button
                 className="text-truncate fs-14 history-button"
                 onClick={() => this.setState({ activeHistory: 'income' })}
@@ -153,20 +155,11 @@ class History extends React.Component {
                 Transfer
               </Button>
             </div>
-            <Accordion className="pdt-16">
-              {
-                history.map((historyData, historyIndex) => (
-                  <div className="pdb-16" key={historyIndex}>
-                    <p className="font-weight-bold fs-12 mgb-10">{ historyData.date }</p>
-                    {
-                      historyData.data.map((data, index) => (
-                        <HistoryList history={data} index={index} key={index} />
-                      ))
-                    }
-                  </div>
-                ))
-              }
-            </Accordion>
+            {
+              history.map((data, index) => (
+                <HistoryList history={data} key={index} />
+              ))
+            }
           </Col>
         </Row>
         <NavigationBar />
