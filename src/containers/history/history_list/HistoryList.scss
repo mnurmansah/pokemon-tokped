@@ -1,0 +1,18 @@
+@import "../../../styles/variables.scss";
+
+.accordion {
+  &.history-list-card {
+    background-color: $white;
+    box-shadow: 1px 4px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 5px;
+
+    .card-header {
+      background-color: $white;
+      border-bottom: 1px solid $grey-border;
+
+      &:last-child {
+        border-bottom: none;
+      }
+    }
+  }
+}
