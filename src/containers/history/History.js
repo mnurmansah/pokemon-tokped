@@ -115,8 +115,18 @@ class History extends React.Component {
           ],
         },
       ],
-      activeHistory: 'income',
+      activeHistory: 'all',
     };
+  }
+
+  handleSetActiveHistory = (value) => {
+    const { activeHistory } = this.state;
+    
+    if (activeHistory === value) {
+      this.setState({ activeHistory: 'all' })
+    } else {
+      this.setState({ activeHistory: value })
+    }
   }
 
   render() {
@@ -135,21 +145,21 @@ class History extends React.Component {
             <div className="d-flex justify-content-center align-items-center mgy-24 history-button-group">
               <Button
                 className="text-truncate fs-14 history-button"
-                onClick={() => this.setState({ activeHistory: 'income' })}
+                onClick={() => this.handleSetActiveHistory('income')}
                 active={activeHistory === 'income'}
               >
                 Pemasukan
               </Button>
               <Button
                 className="text-truncate fs-14 history-button"
-                onClick={() => this.setState({ activeHistory: 'expense' })}
+                onClick={() => this.handleSetActiveHistory('expense')}
                 active={activeHistory === 'expense'}
               >
                 Pengeluaran
               </Button>
               <Button
                 className="text-truncate fs-14 history-button"
-                onClick={() => this.setState({ activeHistory: 'transfer' })}
+                onClick={() => this.handleSetActiveHistory('transfer')}
                 active={activeHistory === 'transfer'}
               >
                 Transfer

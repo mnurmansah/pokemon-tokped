@@ -9,9 +9,17 @@
     .card-header {
       background-color: $white;
       border-bottom: 1px solid $grey-border;
+      min-height: 40px;
 
       &:last-child {
         border-bottom: none;
+      }
+
+      .box {
+        min-width: 24px;
+        min-height: 24px;
+        background-color: red;
+        border-radius: 50%;
       }
     }
   }
