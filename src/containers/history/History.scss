@@ -35,5 +35,9 @@
     background-color: $white !important;
     border: none !important;
     padding: 12px;
+
+    &.filtered {
+      background: linear-gradient(135deg, #65fdf0 0%, #1d6fa3 100%);
+    }
   }
 }

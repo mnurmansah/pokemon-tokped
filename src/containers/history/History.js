@@ -148,7 +148,7 @@ class History extends React.Component {
   }
 
   render() {
-    const { history, activeHistory, showFilterDaterangepicker, selectedDayRange } = this.state;
+    const { history, activeHistory, showFilterDaterangepicker, selectedDayRange: { from, to } } = this.state;
 
     return (
       <div className="history-container">
@@ -184,15 +184,24 @@ class History extends React.Component {
                   Transfer
                 </Button>
               </div>
-              <Button className="filter-button" onClick={() => this.setState({ showFilterDaterangepicker: !showFilterDaterangepicker })}>
-                <img src="/images/icons/filter-list.svg" alt="filter-list" />
+              <Button className={`filter-button ${(from && to) ? 'filtered' : ''}`} onClick={() => this.setState({ showFilterDaterangepicker: !showFilterDaterangepicker })}>
+                {
+                  (from && to) && (
+                    <img src="/images/icons/filter-list-white.svg" alt="filter-list-white" />
+                  )
+                }
+                {
+                  !(from && to) && (
+                    <img src="/images/icons/filter-list.svg" alt="filter-list" />
+                  )
+                }
               </Button>
             </div>
             <CustomDaterangepicker
               show={showFilterDaterangepicker}
               close={() => setTimeout(() => this.setState({ showFilterDaterangepicker: !showFilterDaterangepicker }), 300)}
-              from={selectedDayRange.from}
-              to={selectedDayRange.to}
+              from={from}
+              to={to}
               handleDayrangeClick={this.handleDayrangeClick}
             />
             {
