@@ -4,8 +4,9 @@ import {
 } from 'react-bootstrap';
 import AccountCard from './account_card/AccountCard';
 import QuickHistory from './quick_history/QuickHistory';
-import NavigationBar from './navigation_bar/NavigationBar';
+import NavigationBar from '../../components/navigation_bar/NavigationBar';
 import './Dashboard.scss';
+import { Link } from 'react-router-dom';
 
 class Dashboard extends React.Component {
   constructor() {
@@ -103,7 +104,7 @@ class Dashboard extends React.Component {
               <div className="d-flex justify-content-between fs-12 pdt-20">
                 <p className="mb-0">Riwayat Saldo</p>
                 <div className="d-flex justify-content-center font-weight-bold">
-                  <p className="mb-0 mr-2 load-more">Muat Lebih</p>
+                  <Link to="/history" className="mb-0 mr-2">Muat Lebih</Link>
                   <img src="/images/icons/chevron-right.svg" alt="chevron-right-icon" />
                 </div>
               </div>
