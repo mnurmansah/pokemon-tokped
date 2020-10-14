@@ -141,7 +141,12 @@ class History extends React.Component {
     if (!disabled) {
       const { selectedDayRange } = this.state;
       const range = DateUtils.addDayToRange(day, selectedDayRange)
-      this.setState({ selectedDayRange: range });
+
+      if (range.from && !range.to) {
+        this.setState({ selectedDayRange: { from: range.from, to: range.from } })
+      } else {
+        this.setState({ selectedDayRange: range });
+      }
     } else {
       return;
     }
