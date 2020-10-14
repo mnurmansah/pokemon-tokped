@@ -20,6 +20,8 @@ function App() {
             <Switch>
               <Route path="/" exact component={Dashboard} />
               <Route path="/login" exact component={Login} />
+              <Route path="/create" exact component={Create} />
+              <Route path="/history" exact component={History} />
               <Route path="/forgotpassword" exact component={ForgotPassword} />
               <Route path="*" component={Error404} />
             </Switch>
