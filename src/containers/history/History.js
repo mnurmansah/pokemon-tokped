@@ -4,8 +4,11 @@ import {
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import NavigationBar from '../../components/navigation_bar/NavigationBar';
-import './History.scss';
 import HistoryList from './history_list/HistoryList';
+import CustomDaterangepicker from '../../components/custom_daterangepicker/CustomDaterangepicker';
+
+import './History.scss';
+import { DateUtils } from 'react-day-picker';
 
 class History extends React.Component {
   constructor() {
@@ -116,6 +119,11 @@ class History extends React.Component {
         },
       ],
       activeHistory: 'all',
+      showFilterDaterangepicker: false,
+      selectedDayRange: {
+        from: undefined,
+        to: undefined
+      }
     };
   }
 
@@ -127,10 +135,20 @@ class History extends React.Component {
     } else {
       this.setState({ activeHistory: value })
     }
+  };
+
+  handleDayrangeClick = (day, { disabled }) => {
+    if (!disabled) {
+      const { selectedDayRange } = this.state;
+      const range = DateUtils.addDayToRange(day, selectedDayRange)
+      this.setState({ selectedDayRange: range });
+    } else {
+      return;
+    }
   }
 
   render() {
-    const { history, activeHistory } = this.state;
+    const { history, activeHistory, showFilterDaterangepicker, selectedDayRange } = this.state;
 
     return (
       <div className="history-container">
@@ -142,29 +160,41 @@ class History extends React.Component {
                 <p className="font-weight-bold fs-14 mb-0 mgl-20">Riwayat</p>
               </div>
             </Link>
-            <div className="d-flex justify-content-center align-items-center mgy-24 history-button-group">
-              <Button
-                className="text-truncate fs-14 history-button"
-                onClick={() => this.handleSetActiveHistory('income')}
-                active={activeHistory === 'income'}
-              >
-                Pemasukan
-              </Button>
-              <Button
-                className="text-truncate fs-14 history-button"
-                onClick={() => this.handleSetActiveHistory('expense')}
-                active={activeHistory === 'expense'}
-              >
-                Pengeluaran
-              </Button>
-              <Button
-                className="text-truncate fs-14 history-button"
-                onClick={() => this.handleSetActiveHistory('transfer')}
-                active={activeHistory === 'transfer'}
-              >
-                Transfer
+            <div className="d-flex justify-content-center align-items-center">
+              <div className="d-flex justify-content-center align-items-center mgy-24 mr-2 history-button-group">
+                <Button
+                  className="text-truncate fs-14 history-button"
+                  onClick={() => this.handleSetActiveHistory('income')}
+                  active={activeHistory === 'income'}
+                >
+                  Pemasukan
+                </Button>
+                <Button
+                  className="text-truncate fs-14 history-button"
+                  onClick={() => this.handleSetActiveHistory('expense')}
+                  active={activeHistory === 'expense'}
+                >
+                  Pengeluaran
+                </Button>
+                <Button
+                  className="text-truncate fs-14 history-button"
+                  onClick={() => this.handleSetActiveHistory('transfer')}
+                  active={activeHistory === 'transfer'}
+                >
+                  Transfer
+                </Button>
+              </div>
+              <Button className="filter-button" onClick={() => this.setState({ showFilterDaterangepicker: !showFilterDaterangepicker })}>
+                <img src="/images/icons/filter-list.svg" alt="filter-list" />
               </Button>
             </div>
+            <CustomDaterangepicker
+              show={showFilterDaterangepicker}
+              close={() => setTimeout(() => this.setState({ showFilterDaterangepicker: !showFilterDaterangepicker }), 300)}
+              from={selectedDayRange.from}
+              to={selectedDayRange.to}
+              handleDayrangeClick={this.handleDayrangeClick}
+            />
             {
               history.map((data, index) => (
                 <HistoryList history={data} key={index} />
