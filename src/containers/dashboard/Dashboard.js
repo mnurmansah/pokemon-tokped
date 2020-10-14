@@ -2,11 +2,11 @@ import React from 'react';
 import {
   Accordion, Col, Jumbotron, Row,
 } from 'react-bootstrap';
+import { Link } from 'react-router-dom';
 import AccountCard from './account_card/AccountCard';
 import QuickHistory from './quick_history/QuickHistory';
 import NavigationBar from '../../components/navigation_bar/NavigationBar';
 import './Dashboard.scss';
-import { Link } from 'react-router-dom';
 
 class Dashboard extends React.Component {
   constructor() {
