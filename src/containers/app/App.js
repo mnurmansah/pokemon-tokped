@@ -3,10 +3,10 @@ import { Col, Container, Row } from 'react-bootstrap';
 import { Route, BrowserRouter as Router, Switch } from 'react-router-dom';
 import { createBrowserHistory } from 'history';
 import Login from '../login/Login';
+import History from '../history/History';
 import Create from '../create/Create';
 import Dashboard from '../dashboard/Dashboard';
 import Error404 from '../../components/error_404/Error404';
-import History from '../history/History';
 
 const history = createBrowserHistory();
 
