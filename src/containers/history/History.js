@@ -3,12 +3,12 @@ import {
   Button, Col, Row,
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { DateUtils } from 'react-day-picker';
 import NavigationBar from '../../components/navigation_bar/NavigationBar';
 import HistoryList from './history_list/HistoryList';
 import CustomDaterangepicker from '../../components/custom_daterangepicker/CustomDaterangepicker';
-
+import CustomModal from '../../components/custom_modal/CustomModal';
 import './History.scss';
-import { DateUtils } from 'react-day-picker';
 
 class History extends React.Component {
   constructor() {
@@ -119,7 +119,7 @@ class History extends React.Component {
         },
       ],
       activeHistory: 'all',
-      showFilterDaterangepicker: false,
+      showAdvancedFilter: false,
       selectedDayRange: {
         from: undefined,
         to: undefined
@@ -153,7 +153,7 @@ class History extends React.Component {
   }
 
   render() {
-    const { history, activeHistory, showFilterDaterangepicker, selectedDayRange: { from, to } } = this.state;
+    const { history, activeHistory, showAdvancedFilter, selectedDayRange: { from, to } } = this.state;
 
     return (
       <div className="history-container">
@@ -189,7 +189,7 @@ class History extends React.Component {
                   Transfer
                 </Button>
               </div>
-              <Button className={`filter-button ${(from && to) ? 'filtered' : ''}`} onClick={() => this.setState({ showFilterDaterangepicker: !showFilterDaterangepicker })}>
+              <Button className={`filter-button ${(from && to) ? 'filtered' : ''}`} onClick={() => this.setState({ showAdvancedFilter: !showAdvancedFilter })}>
                 {
                   (from && to) && (
                     <img src="/images/icons/filter-list-white.svg" alt="filter-list-white" />
@@ -202,13 +202,30 @@ class History extends React.Component {
                 }
               </Button>
             </div>
-            <CustomDaterangepicker
-              show={showFilterDaterangepicker}
-              close={() => setTimeout(() => this.setState({ showFilterDaterangepicker: !showFilterDaterangepicker }), 300)}
-              from={from}
-              to={to}
-              handleDayrangeClick={this.handleDayrangeClick}
-            />
+            <CustomModal
+              show={showAdvancedFilter}
+            >
+              <>
+                <CustomDaterangepicker
+                  from={from}
+                  to={to}
+                  handleDayrangeClick={this.handleDayrangeClick}
+                  className="m-3 text-center"
+                />
+                <div className="d-flex justify-content-center align-items-center mb-3">
+                  <Button 
+                    className="mr-2 footer-button cancel" 
+                    onClick={() => setTimeout(() => this.setState({ showAdvancedFilter: !showAdvancedFilter }), 300)}>
+                    Batal
+                  </Button>
+                  <Button 
+                    className="footer-button done" 
+                    onClick={() => setTimeout(() => this.setState({ showAdvancedFilter: !showAdvancedFilter }), 300)}>
+                    Selesai
+                  </Button>
+                </div>
+              </>
+            </CustomModal>
             {
               history.map((data, index) => (
                 <HistoryList history={data} key={index} />
