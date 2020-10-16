@@ -1,15 +1,10 @@
+@import "../../styles/variables.scss";
+
 .image-sizing {
   margin-top: 71px;
   margin-bottom: 58px;
-  position: center;
 }
 
 .form {
   margin: 0 auto;
-}
-
-.btn {
-  &.button-color {
-    background-color: #5efce8, #736efe !important;
-  }
 }

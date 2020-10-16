@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Button, FormGroup, FormControl,
-} from 'react-bootstrap';
+import {FormGroup, FormControl, Button,} from 'react-bootstrap';
 import './Login.scss';
 
 export default function Login() {
@@ -21,12 +19,12 @@ export default function Login() {
     <div className="image-sizing text-center">
         <img src="/images/icons/wallet_24px.svg" alt="sort-icon"></img>
         <br></br>
-        <img src="/images/icons/text_dompet_dhuafa_24px.svg" alt="sort-icon"></img>
+        <img src="/images/texts/text_dompet_dhuafa_24px.svg" alt="sort-icon"></img>
     </div>
     <div className="pd-0">
       <form onSubmit={handleSubmit}>
+      <p><img src="/images/texts/text_selamat_datang_24px.svg" alt="sort-icon"></img></p>
         <FormGroup>
-          <p><img src="/images/icons/text_selamat_datang_24px.svg" alt="sort-icon"></img></p>
           <FormControl
             autoFocus
             type="email"
@@ -43,11 +41,9 @@ export default function Login() {
             type="password"
           />
         </FormGroup>
-        <div >
-        <Button className="button-color" block disabled={!validateForm()} type="submit">
-          Masuk
+        <Button className="custom-button" block disabled={!validateForm()} type="submit">
+        Masuk
         </Button>
-        </div>
       </form>
     </div>
     <p className="text-center mgt-10 fs-13"><Link to="/forgotpassword" > Lupa kata sandi ? </Link></p>
