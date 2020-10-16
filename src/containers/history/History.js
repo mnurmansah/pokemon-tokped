@@ -3,12 +3,12 @@ import {
   Button, Col, Row,
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
+import { DateUtils } from 'react-day-picker';
 import NavigationBar from '../../components/navigation_bar/NavigationBar';
 import HistoryList from './history_list/HistoryList';
 import CustomDaterangepicker from '../../components/custom_daterangepicker/CustomDaterangepicker';
 
 import './History.scss';
-import { DateUtils } from 'react-day-picker';
 
 class History extends React.Component {
   constructor() {
@@ -157,7 +157,7 @@ class History extends React.Component {
 
     return (
       <div className="history-container">
-        <Row className="p-3">
+        <Row>
           <Col>
             <Link to="/">
               <div className="d-flex justify-content-start align-items-center">
