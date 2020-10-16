@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
 import {
-  Button, FormGroup, FormControl, FormLabel,
+  Button, FormGroup, FormControl,
 } from 'react-bootstrap';
 import './Login.scss';
 
@@ -18,18 +18,15 @@ export default function Login() {
   }
 
   return (<>
-    <div className="text-center header-top-section">
+    <div className="image-sizing text-center">
         <img src="/images/icons/wallet_24px.svg" alt="sort-icon"></img>
         <br></br>
         <img src="/images/icons/text_dompet_dhuafa_24px.svg" alt="sort-icon"></img>
     </div>
-    <br></br><br></br>
-    <div className="Login">
+    <div className="pd-0">
       <form onSubmit={handleSubmit}>
-        <FormGroup controlId="email">
-          <FormLabel><img src="/images/icons/text_selamat_datang_24px.svg" alt="sort-icon"></img></FormLabel>
-          <br></br>
-          <FormLabel>Email</FormLabel>
+        <FormGroup>
+          <p><img src="/images/icons/text_selamat_datang_24px.svg" alt="sort-icon"></img></p>
           <FormControl
             autoFocus
             type="email"
@@ -39,7 +36,6 @@ export default function Login() {
           />
         </FormGroup>
         <FormGroup controlId="password">
-          <FormLabel>Kata Sandi</FormLabel>
           <FormControl
             value={password}
             placeholder="Password"
@@ -54,8 +50,8 @@ export default function Login() {
         </div>
       </form>
     </div>
-    <p className="text-center mgt-8 fs-13">Lupa Kata Sandi?</p>
-    <p className="text-center fs-13">Tidak memiliki akun? <Link to="/register" > Daftar </Link></p>
+    <p className="text-center mgt-10 fs-13"><Link to="/forgotpassword" > Lupa kata sandi ? </Link></p>
+    <p className="text-center mgt-9 fs-13">Tidak memiliki akun? <Link to="/register" > Daftar </Link></p>
     </>
   );
 }

@@ -1,12 +1,15 @@
-.Login {
-  padding: 0px 0;
+.image-sizing {
+  margin-top: 71px;
+  margin-bottom: 58px;
+  position: center;
 }
-.Login form {
+
+.form {
   margin: 0 auto;
-  //max-width: 320px;
 }
+
 .btn {
   &.button-color {
-    background-color: #27ae60 !important;
+    background-color: #5efce8, #736efe !important;
   }
 }
