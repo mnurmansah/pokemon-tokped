@@ -157,7 +157,7 @@ class History extends React.Component {
 
     return (
       <div className="history-container">
-        <Row className="p-3">
+        <Row>
           <Col>
             <Link to="/">
               <div className="d-flex justify-content-start align-items-center">

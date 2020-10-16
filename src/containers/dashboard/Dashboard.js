@@ -1,6 +1,6 @@
 import React from 'react';
 import {
-  Accordion, Col, Jumbotron, Row,
+  Accordion, Card, Col, Jumbotron, Row,
 } from 'react-bootstrap';
 import { Link } from 'react-router-dom';
 import AccountCard from './account_card/AccountCard';
@@ -72,7 +72,7 @@ class Dashboard extends React.Component {
 
     return (
       <div className="dashboard-container">
-        <Jumbotron className="mb-0 pd-16 header-jumbotron">
+        <Jumbotron className="p-0 header-jumbotron">
           <div className="d-flex justify-content-between text-center pdb-24">
             <img src="/images/icons/sort.svg" alt="sort-icon" />
             <p className="mb-0 fs-14">Yudhistira Putra Nugraha</p>
@@ -81,15 +81,14 @@ class Dashboard extends React.Component {
           <p className="mb-1 fs-12">Total Saldo :</p>
           <p className="mb-0 font-weight-bold total-balance fs-28">Rp 100.000.000</p>
         </Jumbotron>
-        <div className="pdx-16">
-          <Row>
-            <Col className="d-flex justify-content-between my-2">
-              <p className="mb-0 fs-12">Daftar Akun</p>
-              <img src="/images/icons/add.svg" alt="add-icon" />
-            </Col>
-          </Row>
-          <Row>
-            {
+        <Row>
+          <Col className="d-flex justify-content-between my-2">
+            <p className="mb-0 fs-12">Daftar Akun</p>
+            <img src="/images/icons/add.svg" alt="add-icon" />
+          </Col>
+        </Row>
+        <Row>
+          {
               accounts.map((account, index) => (
                 <Col xs={6} className={index % 2 === 0 ? 'pr-1' : 'pl-1'} key={index}>
                   <AccountCard
@@ -98,30 +97,27 @@ class Dashboard extends React.Component {
                 </Col>
               ))
             }
-          </Row>
-          <Row>
-            <Col>
-              <div className="d-flex justify-content-between fs-12 pdt-20">
-                <p className="mb-0">Riwayat Saldo</p>
-                <div className="d-flex justify-content-center font-weight-bold">
-                  <Link to="/history" className="mb-0 mr-2">Muat Lebih</Link>
-                  <img src="/images/icons/chevron-right.svg" alt="chevron-right-icon" />
-                </div>
-              </div>
-            </Col>
-          </Row>
-          <Row>
-            <Col>
-              <Accordion className="pdt-16">
+        </Row>
+        <Row>
+          <Col className="pdt-16">
+            <Accordion className="quick-history-container">
+              <Card>
+                <Accordion.Toggle as={Card.Header} className="mb-0 d-flex justify-content-between align-items-center pdy-14 px-2">
+                  <p className="mb-0 fs-12">Riwayat Saldo</p>
+                  <div className="d-flex justify-content-center font-weight-bold">
+                    <Link to="/history" className="mb-0 mr-2 fs-12">Muat Lebih</Link>
+                    <img src="/images/icons/chevron-right.svg" alt="chevron-right-icon" />
+                  </div>
+                </Accordion.Toggle>
                 {
                   history.map((data, index) => (
                     <QuickHistory history={data} index={index + 1} key={index} />
                   ))
                 }
-              </Accordion>
-            </Col>
-          </Row>
-        </div>
+              </Card>
+            </Accordion>
+          </Col>
+        </Row>
         <NavigationBar />
       </div>
     );

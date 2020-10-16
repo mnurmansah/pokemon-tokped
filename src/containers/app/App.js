@@ -13,7 +13,7 @@ const history = createBrowserHistory();
 
 function App() {
   return (
-    <Container className="p-3">
+    <Container className="pd-20">
       <Row>
         <Col>
           <Router history={history}>
