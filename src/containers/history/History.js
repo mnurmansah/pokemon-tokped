@@ -9,6 +9,7 @@ import HistoryList from './history_list/HistoryList';
 import CustomDaterangepicker from '../../components/custom_daterangepicker/CustomDaterangepicker';
 import CustomModal from '../../components/custom_modal/CustomModal';
 import './History.scss';
+import CustomDropdown from '../../components/custom_dropdown/CustomDropdown';
 
 class History extends React.Component {
   constructor() {
@@ -204,27 +205,43 @@ class History extends React.Component {
             </div>
             <CustomModal
               show={showAdvancedFilter}
+              className="history-custom-modal"
             >
-              <>
+              <div className="px-3">
+                <div className="mx-auto mt-3 separator"></div>
                 <CustomDaterangepicker
                   from={from}
                   to={to}
                   handleDayrangeClick={this.handleDayrangeClick}
                   className="m-3 text-center"
                 />
-                <div className="d-flex justify-content-center align-items-center mb-3">
+                <div className="m-3 mb-0 text-center">
+                  <CustomDropdown 
+                    toggleText="Akun"
+                    dropDirection="up"
+                    className="mx-auto history-account-dropdown" 
+                  />
+                </div>
+                <div className="m-3 mb-0 text-center">
+                  <CustomDropdown 
+                    toggleText="Kategori"
+                    dropDirection="up"
+                    className="mx-auto history-account-dropdown" 
+                  />
+                </div>
+                <div className="my-3 mx-auto px-3 d-flex justify-content-between align-items-center history-modal-footer">
                   <Button 
-                    className="mr-2 footer-button cancel" 
+                    className="py-2 mr-1 fs-14 footer-button cancel" 
                     onClick={() => setTimeout(() => this.setState({ showAdvancedFilter: !showAdvancedFilter }), 300)}>
                     Batal
                   </Button>
                   <Button 
-                    className="footer-button done" 
+                    className="py-2 ml-1 fs-14 footer-button done" 
                     onClick={() => setTimeout(() => this.setState({ showAdvancedFilter: !showAdvancedFilter }), 300)}>
                     Selesai
                   </Button>
                 </div>
-              </>
+              </div>
             </CustomModal>
             {
               history.map((data, index) => (
