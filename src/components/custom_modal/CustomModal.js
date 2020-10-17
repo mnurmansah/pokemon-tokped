@@ -4,13 +4,14 @@ import { Modal } from 'react-bootstrap';
 import './CustomModal.scss';
 
 const CustomModal = ({
-  show, children, backdrop, onHide,
+  show, children, backdrop, onHide, className,
 }) => (
   <Modal
     show={show}
     dialogClassName="custom-modal"
     backdrop={backdrop ? 'static' : true}
     onHide={onHide}
+    className={className}
   >
     { children }
   </Modal>
@@ -19,6 +20,7 @@ const CustomModal = ({
 CustomModal.defaultProps = {
   backdrop: false,
   onHide: () => {},
+  className: '',
 };
 
 CustomModal.propTypes = {
@@ -26,6 +28,7 @@ CustomModal.propTypes = {
   children: PropTypes.element.isRequired,
   backdrop: PropTypes.bool,
   onHide: PropTypes.func,
+  className: PropTypes.string,
 };
 
 export default CustomModal;

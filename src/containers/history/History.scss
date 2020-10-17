@@ -42,20 +42,43 @@
   }
 }
 
-.btn {
-  &.footer-button {
+.history-custom-modal {
+  .separator {
     width: 100px;
-    border-radius: 15px;
-  
-    &.cancel {
-      background-color: transparent !important;
-      border: none;
-      color: $grey;
+    height: 5px;
+    background-color: $grey-2;
+  }
+
+  .custom-daterangepicker {
+    .DayPicker {
+      border-bottom: 0.5px solid $daypicker-caption;
     }
-  
-    &.done {
-      border: none;
-      background: linear-gradient(135deg, #5efce8 0%, #736efe 100%);
+  }
+
+  .history-account-dropdown {
+    width: 100%;
+    max-width: 570px;
+  }
+
+  .history-modal-footer {
+    max-width: 570px;
+
+    .btn {
+      &.footer-button {
+        width: 50%;
+        border-radius: 15px;
+      
+        &.cancel {
+          background-color: transparent !important;
+          border: 0.5px solid $daypicker-caption !important;
+          color: $grey;
+        }
+      
+        &.done {
+          border: none;
+          background: linear-gradient(135deg, #5efce8 0%, #736efe 100%);
+        }
+      }
     }
   }
 }
