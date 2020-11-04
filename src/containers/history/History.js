@@ -238,7 +238,7 @@ class History extends React.Component {
                 </div>
                 <div className="m-3 mb-0 text-center">
                   <CustomSelect
-                    className="mx-auto" 
+                    className="mx-auto history-account-select" 
                     loading={categoriesLoading}
                     data={categories}
                   />
