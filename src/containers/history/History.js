@@ -10,6 +10,8 @@ import CustomDaterangepicker from '../../components/custom_daterangepicker/Custo
 import CustomModal from '../../components/custom_modal/CustomModal';
 import './History.scss';
 import CustomDropdown from '../../components/custom_dropdown/CustomDropdown';
+import CustomSelect from '../../components/custom_select/CustomSelect';
+import { getCategories } from '../../utils/api';
 
 class History extends React.Component {
   constructor() {
@@ -124,8 +126,20 @@ class History extends React.Component {
       selectedDayRange: {
         from: undefined,
         to: undefined
-      }
+      },
+      categories: [],
+      categoriesLoading: false
     };
+  }
+
+  async componentDidMount() {
+    // Get categories
+    const result = await getCategories();
+    const setCategories = result.data.categories.map(({ id, value }) => ({
+      id,
+      value
+    }));
+    this.setState({ categories: setCategories });
   }
 
   handleSetActiveHistory = (value) => {
@@ -154,7 +168,7 @@ class History extends React.Component {
   }
 
   render() {
-    const { history, activeHistory, showAdvancedFilter, selectedDayRange: { from, to } } = this.state;
+    const { history, activeHistory, showAdvancedFilter, selectedDayRange: { from, to }, categoriesLoading, categories } = this.state;
 
     return (
       <div className="history-container">
@@ -223,10 +237,10 @@ class History extends React.Component {
                   />
                 </div>
                 <div className="m-3 mb-0 text-center">
-                  <CustomDropdown 
-                    toggleText="Kategori"
-                    dropDirection="up"
-                    className="mx-auto history-account-dropdown" 
+                  <CustomSelect
+                    className="mx-auto" 
+                    loading={categoriesLoading}
+                    data={categories}
                   />
                 </div>
                 <div className="my-3 mx-auto px-3 d-flex justify-content-between align-items-center history-modal-footer">

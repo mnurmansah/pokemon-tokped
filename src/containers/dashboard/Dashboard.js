@@ -16,22 +16,22 @@ class Dashboard extends React.Component {
         {
           name: 'Tunai',
           balance: 100000,
-          background: 'linear-gradient(100.42deg, #6FCFB4 0.56%, #5D8A7D 97.77%)',
+          background: 'linear-gradient(135deg, #FFA8A8 0%, #FCFF00 100%)',
         },
         {
           name: 'Bank ABC',
           balance: 100000,
-          background: 'linear-gradient(100.41deg, #F2C94C 0%, #BF9C32 100%)',
+          background: 'linear-gradient(135deg, #3C8CE7 0%, #00EAFF 100%)',
         },
         {
           name: 'Opo',
           balance: 100000,
-          background: 'linear-gradient(100.41deg, #BB6BD9 0%, #8A27AF 100%)',
+          background: 'linear-gradient(135deg, #FF6FD8 0%, #3813C2 100%)',
         },
         {
           name: 'Gojex',
           balance: 100000,
-          background: 'linear-gradient(100.41deg, #56CCF2 0%, #2E8FAE 100%)',
+          background: 'linear-gradient(135deg, #81FBB8 0%, #28C76F 100%)',
         },
       ],
       history: [
@@ -75,8 +75,8 @@ class Dashboard extends React.Component {
         <Jumbotron className="p-0 header-jumbotron">
           <div className="d-flex justify-content-between text-center pdb-24">
             <img src="/images/icons/sort.svg" alt="sort-icon" />
-            <p className="mb-0 fs-14">Yudhistira Putra Nugraha</p>
-            <img src="/images/icons/mood.svg" alt="mood-icon" />
+            <p className="mb-0 fs-14">Kirigaya Kazuto</p>
+            <img src="/images/kirito.png" className="kirito" alt="mood-icon" />
           </div>
           <p className="mb-1 fs-12">Total Saldo :</p>
           <p className="mb-0 font-weight-bold total-balance fs-28">Rp 100.000.000</p>

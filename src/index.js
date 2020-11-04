@@ -2,8 +2,11 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './containers/app/App';
 import * as serviceWorker from './serviceWorker';
+import setupInterceptors from './middleware/interceptors';
 
 import './styles/index.scss';
+
+setupInterceptors();
 
 ReactDOM.render(
   <React.StrictMode>
