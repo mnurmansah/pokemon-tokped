@@ -12,14 +12,19 @@ const QuickHistory = ({
 }) => (
   <Accordion.Toggle as={Card.Header} eventKey={index} className="py-1 px-2 mb-0 quick-history-list">
     <Row>
-      <Col xs={6}>
-        <p className="mb-0 text-truncate fs-12">{ name }</p>
-        <p className="mb-0 fs-10">
-          { day }
-          ,
-          {' '}
-          { time }
-        </p>
+      <Col xs={6} className="d-flex justify-content-start align-items-center">
+        <div className="d-flex align-items-center justify-content-center mr-2 box">
+          <img src="/images/icons/food-drinks.svg" alt="food-drinks" />
+        </div>
+        <div className="text-truncate">
+          <p className="mb-0 text-truncate fs-12">{ name }</p>
+          <p className="mb-0 fs-10">
+            { day }
+            ,
+            {' '}
+            { time }
+          </p>
+        </div>
       </Col>
       <Col xs={6} className="d-flex justify-content-end align-items-center">
         <img src={`/images/icons/${type}.svg`} alt={`${type}-icon`} />
