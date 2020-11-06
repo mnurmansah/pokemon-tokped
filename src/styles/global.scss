@@ -2,6 +2,10 @@
   // Custom font size from 8px to 32px
   .fs-#{$i} {
     font-size: #{$i}px;
+
+    @media screen and (min-width: 768px) {
+      font-size: #{$i + 2}px;
+    }
   }
 
   // Custom padding from 8px to 32px
