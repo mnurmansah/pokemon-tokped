@@ -1,9 +1,26 @@
 /* eslint-disable no-param-reassign */
 import axios from 'axios';
+import Cookies from 'js-cookie';
+import { auth } from '../utils/api';
+
+const accessToken = 'access-token';
+const refreshToken = 'refresh-token';
 
 export default async () => {
+  const existingToken = Cookies.get(accessToken);
+
+  if (!existingToken) {
+    const payload = {
+      username: 'momox3@mail.com',
+      password: '123456',
+    };
+    const result = await auth(payload);
+    Cookies.set(accessToken, result.data.access_token);
+    Cookies.set(refreshToken, result.data.refresh_token);
+  }
+
   await axios.interceptors.request.use((config) => {
-    const token = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJhY2Nlc3NfdXVpZCI6IjM1ZWM0MDg5LWQzNmQtNGFkZC1iYTUyLTYzYzU3MDRiM2EyZSIsImF1dGhvcml6ZWQiOnRydWUsImV4cCI6MTYwMjM0NjE5NSwidXNlcl9pZCI6Mn0.3nsunNTPAdYQ4w3XV2aGFo0DQI_1yZMFAHId-5KDKK8';
+    const token = existingToken;
 
     config.headers.Authorization = `Bearer ${token}`;
     config.headers['Content-Type'] = 'application/json';
