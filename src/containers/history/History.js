@@ -128,8 +128,13 @@ class History extends React.Component {
         to: undefined
       },
       categories: [],
-      categoriesLoading: false
+      categoriesLoading: false,
+      isMobile: true
     };
+  }
+
+  handleWindowResize = () => {
+    this.setState({ isMobile: window.innerWidth < 768 })
   }
 
   async componentDidMount() {
@@ -139,7 +144,12 @@ class History extends React.Component {
       id,
       value
     }));
-    this.setState({ categories: setCategories });
+
+    this.setState({ 
+      categories: setCategories, 
+      isMobile: window.innerWidth < 768 
+    });
+    window.addEventListener('resize', this.handleWindowResize);
   }
 
   handleSetActiveHistory = (value) => {
@@ -168,7 +178,15 @@ class History extends React.Component {
   }
 
   render() {
-    const { history, activeHistory, showAdvancedFilter, selectedDayRange: { from, to }, categoriesLoading, categories } = this.state;
+    const { 
+      history, 
+      activeHistory, 
+      showAdvancedFilter, 
+      selectedDayRange: { from, to }, 
+      categoriesLoading, 
+      categories,
+      isMobile
+    } = this.state;
 
     return (
       <div className="history-container">
@@ -236,13 +254,17 @@ class History extends React.Component {
                     className="mx-auto history-account-dropdown" 
                   />
                 </div>
-                <div className="m-3 mb-0 text-center">
-                  <CustomSelect
-                    className="mx-auto" 
-                    loading={categoriesLoading}
-                    data={categories}
-                  />
-                </div>
+                {
+                  !isMobile && (
+                    <div className="m-3 mb-0 text-center">
+                      <CustomSelect
+                        className="mx-auto history-account-dropdown" 
+                        loading={categoriesLoading}
+                        data={categories}
+                      />
+                    </div>
+                  )
+                }
                 <div className="my-3 mx-auto px-3 d-flex justify-content-between align-items-center history-modal-footer">
                   <Button 
                     className="py-2 mr-1 fs-14 footer-button cancel" 
