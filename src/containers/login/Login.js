@@ -1,8 +1,6 @@
 import React, { useState } from 'react';
 import { Link } from 'react-router-dom';
-import {
-  Button, FormGroup, FormControl, FormLabel,
-} from 'react-bootstrap';
+import { FormGroup, FormControl, Button } from 'react-bootstrap';
 import './Login.scss';
 
 export default function Login() {
@@ -19,19 +17,15 @@ export default function Login() {
 
   return (
     <>
-      <div className="text-center header-top-section">
+      <div className="image-sizing text-center">
         <img src="/images/icons/wallet_24px.svg" alt="sort-icon" />
         <br />
-        <img src="/images/icons/text_dompet_dhuafa_24px.svg" alt="sort-icon" />
+        <img src="/images/texts/text_dompet_dhuafa_24px.svg" alt="sort-icon" />
       </div>
-      <br />
-      <br />
-      <div className="Login">
+      <div className="pd-0">
         <form onSubmit={handleSubmit}>
-          <FormGroup controlId="email">
-            <FormLabel><img src="/images/icons/text_selamat_datang_24px.svg" alt="sort-icon" /></FormLabel>
-            <br />
-            <FormLabel>Email</FormLabel>
+          <p><img src="/images/texts/text_selamat_datang_24px.svg" alt="sort-icon" /></p>
+          <FormGroup>
             <FormControl
               autoFocus
               type="email"
@@ -41,7 +35,6 @@ export default function Login() {
             />
           </FormGroup>
           <FormGroup controlId="password">
-            <FormLabel>Kata Sandi</FormLabel>
             <FormControl
               value={password}
               placeholder="Password"
@@ -49,15 +42,15 @@ export default function Login() {
               type="password"
             />
           </FormGroup>
-          <div>
-            <Button className="button-color" block disabled={!validateForm()} type="submit">
+          <Link to="/">
+            <Button className="custom-button" block disabled={!validateForm()} type="submit">
               Masuk
             </Button>
-          </div>
+          </Link>
         </form>
       </div>
-      <p className="text-center mgt-8 fs-13">Lupa Kata Sandi?</p>
-      <p className="text-center fs-13">
+      <p className="text-center mgt-10 fs-13"><Link to="/forgot-password"> Lupa kata sandi ? </Link></p>
+      <p className="text-center mgt-9 fs-13">
         Tidak memiliki akun?
         <Link to="/register"> Daftar </Link>
       </p>

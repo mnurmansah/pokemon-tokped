@@ -9,11 +9,13 @@ import './ForgotPassword.scss';
 const ForgotPassword = () => (
   <>
     <Row>
-      <Col className="d-flex flex-column align-items-left justify-content-center pd-28 forgotpassword">
-        <img src="/images/icons/forgot-password.svg" alt="forgot-password" />
+      <Col className="d-flex flex-column align-items-left justify-content-center">
+        <div className="forgotpassword text-center">
+        <img src="/images/ilustrations/forgot-password.png" alt="forgot-password" />
+        </div>
         <br />
         <div className="float-left">
-          <img src="/images/icons/text-forgot-password.svg" alt="sort-icon" />
+          <img src="/images/texts/text-forgot-password.svg" alt="sort-icon" />
         </div>
         <br />
         <FormControl
@@ -24,13 +26,13 @@ const ForgotPassword = () => (
         <br />
         <CustomButton
           onClick={() => { }}
-          className="kirim-email"
+          className="custom-button"
           text="Kirim Email"
         />
         <br />
         <p className="text-center fs-13">
           Sudah memiliki akun?
-          <Link to="/login"> masuk </Link>
+          <Link to="/login"> Masuk </Link>
         </p>
       </Col>
     </Row>

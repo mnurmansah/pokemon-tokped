@@ -8,11 +8,11 @@ const Error404 = ({ history }) => (
   <>
     <Row>
       <Col className="d-flex flex-column align-items-center justify-content-center pd-28 error-404">
-        <img src="/images/icons/404.svg" alt="404-illustration" />
+        <img src="/images/ilustrations/404.png" alt="404-illustration" />
         <p className="fs-12 mgy-27">Maaf, Halaman tidak ditemukan</p>
         <CustomButton
           onClick={() => { history.push('/'); }}
-          className="not-found"
+          className="custom-button"
           text="Kembali"
         />
       </Col>
