@@ -42,12 +42,12 @@ class SplashScreenContainer extends React.Component {
         return (
             <>
                 <Row>
-      <Col className="d-flex flex-column align-items-center justify-content-center pd-28 splash-screen">
+      <Col className="d-flex flex-column align-items-left justify-content-center pd-28 splash-screen">
         <div className= "image-link">
         <img src={`${ splashData[activeSplash].imageLink }`} alt={`${ splashData[activeSplash].imageLink }`}/>
         </div>
         
-        <p className="fs-12 mgt-31">Lorem Ipsum is simply dummy text of the printing 
+        <p className="fs-12 mgt-31 text-center">Lorem Ipsum is simply dummy text of the printing 
         and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since</p>
         
         <div className= "step-page pb-5">
