@@ -11,13 +11,11 @@ const ForgotPassword = () => (
     <Row>
       <Col className="d-flex flex-column align-items-left justify-content-center">
         <div className="forgotpassword text-center">
-        <img src="/images/ilustrations/forgot-password.png" alt="forgot-password" />
+          <img src="/images/ilustrations/forgot-password.png" alt="forgot-password" />
         </div>
-        <br />
-        <div className="float-left">
+        <div className="float-left pdb-19">
           <img src="/images/texts/text-forgot-password.svg" alt="sort-icon" />
         </div>
-        <br />
         <FormControl
           autoFocus
           type="email"
@@ -30,9 +28,9 @@ const ForgotPassword = () => (
           text="Kirim Email"
         />
         <br />
-        <p className="text-center fs-13">
+        <p className="text-center fs-13" style={{ color: '#000000' }}>
           Sudah memiliki akun?
-          <Link to="/login"> Masuk </Link>
+          <Link to="/login" style={{ color: '#7080b3' }}> Masuk </Link>
         </p>
       </Col>
     </Row>

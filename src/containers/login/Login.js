@@ -24,7 +24,7 @@ export default function Login() {
       </div>
       <div className="pd-0">
         <form onSubmit={handleSubmit}>
-          <p><img src="/images/texts/text_selamat_datang_24px.svg" alt="sort-icon" /></p>
+          <p className="pdb-19"><img src="/images/texts/text_selamat_datang_24px.svg" alt="sort-icon" /></p>
           <FormGroup>
             <FormControl
               autoFocus
@@ -49,10 +49,10 @@ export default function Login() {
           </Link>
         </form>
       </div>
-      <p className="text-center mgt-10 fs-13"><Link to="/forgot-password"> Lupa kata sandi ? </Link></p>
-      <p className="text-center mgt-9 fs-13">
+      <p className="text-center pdt-10 fs-12"><Link to="/forgot-password" style={{ color: '#7080b3' }}>  Lupa kata sandi ? </Link></p>
+      <p className="text-center fs-12" style={{ color: '#000000' }}>
         Tidak memiliki akun?
-        <Link to="/register"> Daftar </Link>
+        <Link to="/register" style={{ color: '#7080b3' }}> Daftar </Link>
       </p>
     </>
   );
