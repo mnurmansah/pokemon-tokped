@@ -9,7 +9,7 @@ const SaldoAwal = () => (
   <>
     <Row>
       <Col className="d-flex flex-column align-items-left justify-content-center">
-        <p className ="saldo-awal text-center"><img src="/images/ilustrations/saldo-awal.png" alt="saldo-awal"/></p>
+        <p className="saldo-awal text-center"><img src="/images/ilustrations/saldo-awal.png" alt="saldo-awal" /></p>
         <div className="float-left">
           <img src="/images/texts/text-saldo-awal.svg" alt="sort-icon" />
         </div>

@@ -40,7 +40,7 @@ export default function Register() {
             <p className="fs-13">
               Lorem Ipsum is simply dummy text of the printing
               and typesetting industry. Lorem Ipsum has been
-              the industry's standard dummy text ever since the 1500s
+              the industrys standard dummy text ever since the 1500s
             </p>
           </div>
           <Link to="/login">
@@ -49,9 +49,9 @@ export default function Register() {
             </Button>
           </Link>
         </form>
-        <p className="text-center fs-13">
+        <p className="text-center fs-13" style={{ color: '#000000' }}>
           Sudah memiliki akun?
-          <Link to="/login"> Masuk </Link>
+          <Link to="/login" style={{ color: '#7080b3' }}> Masuk </Link>
         </p>
       </div>
     </>
