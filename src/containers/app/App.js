@@ -10,6 +10,7 @@ import Register from '../register/Register';
 import Dashboard from '../dashboard/Dashboard';
 import SaldoAwal from '../saldo_awal/SaldoAwal';
 import SplashScreenContainer from '../splash_screen/SplashScreenContainer';
+import Home from '../home/Home';
 
 const history = createBrowserHistory();
 
@@ -20,13 +21,14 @@ function App() {
         <Col>
           <Router history={history}>
             <Switch>
-              <Route path="/" exact component={Dashboard} />
+              <Route path="/" exact component={Home} />
               <Route path="/history" exact component={History} />
               <Route path="/login" exact component={Login} />
               <Route path="/register" exact component={Register} />
               <Route path="/forgot-password" exact component={ForgotPassword} />
               <Route path="/welcome" exact component={SplashScreenContainer} />
               <Route path="/saldo-awal" exact component={SaldoAwal} />
+              <Route path="/dashboard" exact component={Dashboard} />
               <Route path="*" component={Error404} />
             </Switch>
           </Router>

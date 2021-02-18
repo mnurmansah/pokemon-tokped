@@ -61,7 +61,7 @@ export default function Create() {
                   </FormControl>
                 </td>
                 <td align="left">
-                  <Link to="/" className="add"><img src="/images/icons/add-white.svg" alt="add-icon" /></Link>
+                  <Link to="/" className="add"><img src="/images/icons/pokeball-icon.svg" alt="pokeball-icon" /></Link>
                 </td>
               </tr>
               <tr>

@@ -205,35 +205,16 @@ class History extends React.Component {
                   onClick={() => this.handleSetActiveHistory('income')}
                   active={activeHistory === 'income'}
                 >
-                  Pemasukan
+                  Pokédex
                 </Button>
                 <Button
                   className="text-truncate fs-14 history-button"
                   onClick={() => this.handleSetActiveHistory('expense')}
                   active={activeHistory === 'expense'}
                 >
-                  Pengeluaran
-                </Button>
-                <Button
-                  className="text-truncate fs-14 history-button"
-                  onClick={() => this.handleSetActiveHistory('transfer')}
-                  active={activeHistory === 'transfer'}
-                >
-                  Transfer
+                  My Pokemon
                 </Button>
               </div>
-              <Button className={`filter-button ${(from && to) ? 'filtered' : ''}`} onClick={() => this.setState({ showAdvancedFilter: !showAdvancedFilter })}>
-                {
-                  (from && to) && (
-                    <img src="/images/icons/filter-list-white.svg" alt="filter-list-white" />
-                  )
-                }
-                {
-                  !(from && to) && (
-                    <img src="/images/icons/filter-list.svg" alt="filter-list" />
-                  )
-                }
-              </Button>
             </div>
             <CustomModal
               show={showAdvancedFilter}

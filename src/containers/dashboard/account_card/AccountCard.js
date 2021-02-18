@@ -13,7 +13,7 @@ const AccountCard = ({ account: { name, balance, background } }) => (
         { name }
       </Card.Title>
       <Card.Text className="text-right font-weight-bold fs-14">
-        { `Rp ${balance}` }
+        { balance }
       </Card.Text>
     </Card.Body>
   </Card>
