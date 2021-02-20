@@ -6,7 +6,7 @@ import AccountCard from './account_card/AccountCard';
 import NavigationBar from '../../components/navigation_bar/NavigationBar';
 import PokemonDetail from './account_card/PokemonDetail';
 import CustomModal from '../../components/custom_modal/CustomModal';
-import './Mypokemon.scss';
+import './MyPokemon.scss';
 
 class Mypokemon extends React.Component {
   constructor() {
@@ -14,23 +14,23 @@ class Mypokemon extends React.Component {
     this.state = {
       accounts: [
         {
-          name: 'Tunai',
-          balance: 100000,
+          name: '#001 Bulbasaur',
+          balance: 'Picture Bulbasaur',
           background: 'linear-gradient(135deg, #FFA8A8 0%, #FCFF00 100%)',
         },
         {
-          name: 'Bank ABC',
-          balance: 100000,
+          name: '002 Eeve',
+          balance: 'Picture Eeve',
           background: 'linear-gradient(135deg, #3C8CE7 0%, #00EAFF 100%)',
         },
         {
-          name: 'Opo',
-          balance: 100000,
+          name: '003 Pikachu',
+          balance: 'Picture Pikachu',
           background: 'linear-gradient(135deg, #FF6FD8 0%, #3813C2 100%)',
         },
         {
-          name: 'Gojex',
-          balance: 100000,
+          name: '004 Plant',
+          balance: 'Picture Plant',
           background: 'linear-gradient(135deg, #81FBB8 0%, #28C76F 100%)',
         },
       ],

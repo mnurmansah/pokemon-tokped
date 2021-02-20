@@ -7,7 +7,7 @@ import History from '../history/History';
 import Login from '../login/Login';
 import Dashboard from '../dashboard/Dashboard';
 import Home from '../home/Home';
-import Mypokemon from '../mypokemon/Mypokemon';
+import MyPokemon from '../mypokemon/MyPokemon';
 
 const history = createBrowserHistory();
 
@@ -22,7 +22,7 @@ function App() {
               <Route path="/history" exact component={History} />
               <Route path="/login" exact component={Login} />
               <Route path="/dashboard" exact component={Dashboard} />
-              <Route path="/mypokemon" exact component={Mypokemon} />
+              <Route path="/mypokemon" exact component={MyPokemon} />
               <Route path="*" component={Error404} />
             </Switch>
           </Router>
